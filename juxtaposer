@@ -1,0 +1,21 @@
+#juxtaposer by kayakazuyoshi
+
+import random
+import string
+
+no_punctuation_text = ''
+text = input('Enter the text you want to juxtapose!\n')
+
+for word in text:
+    if word not in string.punctuation:
+        no_punctuation_text += word
+        
+auxiliary_list = no_punctuation_text.split()
+
+new_text = []
+
+for i in range(len(auxiliary_list)):
+    word = random.choice(auxiliary_list) + ' '
+    new_text += word
+
+print(''.join(new_text))
